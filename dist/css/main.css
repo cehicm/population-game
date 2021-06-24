@@ -9,6 +9,20 @@ body {
   margin: 0 auto;
 }
 
+.container,
+.country,
+.results {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url("/src/images/world-140304.jpg");
+  color: white;
+  height: 100%;
+}
+
 .success-btn {
   border-radius: 7px;
   padding: 7px;
@@ -21,19 +35,8 @@ body {
   background-color: #398a58;
 }
 
-.container {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-image: url("/src/images/world-140304.jpg");
-  color: white;
-}
-
-.container,
 .country {
-  display: flex;
-  flex-direction: column;
-}
-
-.country {
+  height: 30vh;
   text-align: center;
   border: 1px solid whitesmoke;
   padding: 10px;
@@ -47,7 +50,7 @@ body {
 }
 
 .player {
-  margin-top: 40px;
+  margin-top: 90px;
 }
 .player input {
   padding: 5px;
@@ -68,4 +71,9 @@ select:hover, select:focus {
 
 #result-btn {
   width: 30vw;
+  margin-top: 10px;
+}
+
+.result-span {
+  margin-top: 40px;
 }
