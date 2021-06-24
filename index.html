@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/svg" href="/src/images/globe-icon.svg" />
+    <link rel="stylesheet" href="/dist/css/main.min.css" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Population Game</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="country">
+        <img
+          src="/src/images/globe-icon.svg"
+          alt="country flag"
+          class="country-pic"
+        />
+        <h1 class="country-name">Some Country</h1>
+
+        <button id="skip-btn" class="success-btn" type="submit">
+          Next Country&raquo;
+        </button>
+      </div>
+
+      <div class="player">
+        <div class="player-one">
+          <input type="number" class="player-input" id="player-one-input" />
+          <select name="unit-value" id="unit-value">
+            <option value="1000"> Thousant </option>
+            <option value="1000000"> Million </option>
+            <option value="1000000000"> Billion </option>
+          </select>
+        </div>
+
+        <div class="player-two">
+          <input type="number" class="player-input" id="player-two-input" />
+          <select name="unit-value" id="unit-value">
+            <option value="1000"> Thousant </option>
+            <option value="1000000"> Million </option>
+            <option value="1000000000"> Billion </option>
+          </select>
+        </div>
+      </div>
+
+      <button id="result-btn" class="success-btn">Results</button>
+    </div>
+    <script src="./src/scripts/index.js"></script>
+  </body>
+</html>
