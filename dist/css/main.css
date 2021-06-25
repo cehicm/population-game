@@ -69,6 +69,15 @@ select:hover, select:focus {
   background-color: #2980b9;
 }
 
+.results {
+  margin-top: 40px;
+}
+
+.player-win {
+  color: green;
+  font-weight: bolder;
+}
+
 #result-btn {
   width: 30vw;
   margin-top: 10px;
@@ -76,4 +85,8 @@ select:hover, select:focus {
 
 .result-span {
   margin-top: 40px;
+}
+
+.error-span {
+  color: red;
 }
