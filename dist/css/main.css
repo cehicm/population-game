@@ -7,6 +7,7 @@
 
 body {
   margin: 0 auto;
+  background-image: url("/src/images/world-140304.jpg");
 }
 
 .container,
@@ -18,9 +19,13 @@ body {
 
 .container {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-image: url("/src/images/world-140304.jpg");
   color: white;
-  height: 100%;
+  margin-top: 50px;
+}
+@media only screen and (min-width: 900px) {
+  .container {
+    margin-top: 10px;
+  }
 }
 
 .success-btn {
@@ -34,12 +39,43 @@ body {
 .success-btn:hover, .success-btn:focus {
   background-color: #398a58;
 }
+@media only screen and (min-width: 1400px) {
+  .success-btn {
+    padding: 13px;
+    font-size: 1.2rem;
+  }
+}
+
+#result-btn {
+  width: 30vw;
+  margin-top: 10px;
+}
+@media only screen and (min-width: 600px) {
+  #result-btn {
+    width: 15vw;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #result-btn {
+    width: 8vw;
+  }
+}
 
 .country {
   height: 30vh;
   text-align: center;
   border: 1px solid whitesmoke;
   padding: 10px;
+}
+@media only screen and (min-width: 600px) {
+  .country {
+    height: 50vh;
+  }
+}
+@media only screen and (min-width: 900px) {
+  .country {
+    margin-bottom: 50px;
+  }
 }
 .country-pic {
   width: 30vw;
@@ -52,10 +88,25 @@ body {
 .player {
   margin-top: 90px;
 }
+@media only screen and (min-width: 600px) {
+  .player {
+    margin-top: 40px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .player {
+    margin-top: 90px;
+  }
+}
 .player input {
   padding: 5px;
   width: 20vw;
   margin-bottom: 10px;
+}
+@media only screen and (min-width: 1400px) {
+  .player input {
+    padding: 7px;
+  }
 }
 
 select {
@@ -68,25 +119,24 @@ select {
 select:hover, select:focus {
   background-color: #2980b9;
 }
-
-.results {
-  margin-top: 40px;
+@media only screen and (min-width: 1400px) {
+  select {
+    font-size: 1.1rem;
+  }
 }
 
-.player-win {
+@media only screen and (min-width: 1400px) {
+  .results {
+    margin-top: 10px;
+    margin-bottom: 56px;
+    font-size: 1.2rem;
+  }
+}
+.results-player-win {
   color: green;
   font-weight: bolder;
+  padding: 10px;
 }
-
-#result-btn {
-  width: 30vw;
-  margin-top: 10px;
-}
-
-.result-span {
-  margin-top: 40px;
-}
-
-.error-span {
-  color: red;
+.results-span {
+  margin-top: 20px;
 }

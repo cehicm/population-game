@@ -19,7 +19,7 @@ let apiResponse = fetch(api_url)
     ).innerHTML = population.toLocaleString();
 
     //Get Player Results
-    const getResults = () => {
+    const getShowResults = () => {
       const resultSpan = document.querySelector(".results-correct");
       //Player number input
       let player1 = document.getElementById("player-one-input").value;
@@ -40,7 +40,7 @@ let apiResponse = fetch(api_url)
       } else {
         resultSpan.innerHTML = `The correct number is ${population.toLocaleString()}`;
 
-        const playerWin = document.querySelector(".player-win");
+        const playerWin = document.querySelector(".results-player-win");
 
         if (
           Math.abs(population - playerOneTotal) <
@@ -59,7 +59,7 @@ let apiResponse = fetch(api_url)
     };
 
     const resultBtn = document.getElementById("result-btn");
-    resultBtn.addEventListener("click", getResults);
+    resultBtn.addEventListener("click", getShowResults);
   });
 
 //get the inputs and compare them to the population number

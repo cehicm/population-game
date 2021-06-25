@@ -6,6 +6,7 @@ $black: #333333;
 //Main styles
 body {
     margin: 0 auto;
+    background-image: url("/src/images/world-140304.jpg");
 }
 
 .container,
@@ -17,9 +18,11 @@ body {
 
 .container {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url("/src/images/world-140304.jpg");
     color: white;
-    height: 100%;
+    margin-top: 50px;
+    @media only screen and(min-width: 900px) {
+        margin-top: 10px;
+    }
 }
 
 //Buttons
@@ -36,6 +39,22 @@ body {
     &:focus {
         background-color: #398a58;
     }
+    @media only screen and(min-width: 1400px) {
+        padding: 13px;
+        font-size: 1.2rem;
+    }
+}
+
+#result-btn {
+    width: 30vw;
+    margin-top: 10px;
+
+    @media only screen and(min-width: 600px) {
+        width: 15vw;
+    }
+    @media only screen and(min-width: 1400px) {
+        width: 8vw;
+    }
 }
 
 .country {
@@ -43,12 +62,18 @@ body {
     text-align: center;
     border: 1px solid whitesmoke;
     padding: 10px;
+
+    @media only screen and(min-width: 600px) {
+        height: 50vh;
+    }
+
+    @media only screen and(min-width: 900px) {
+        margin-bottom: 50px;
+    }
+
     &-pic {
         width: 30vw;
         padding: 5px;
-    }
-
-    &-name {
     }
 
     #skip-btn {
@@ -60,10 +85,23 @@ body {
 
 .player {
     margin-top: 90px;
+
+    @media only screen and(min-width: 600px) {
+        margin-top: 40px;
+    }
+
+    @media only screen and(min-width: 1400px) {
+        margin-top: 90px;
+    }
+
     input {
         padding: 5px;
         width: 20vw;
         margin-bottom: 10px;
+
+        @media only screen and(min-width: 1400px) {
+            padding: 7px;
+        }
     }
 }
 
@@ -78,27 +116,28 @@ select {
     &:focus {
         background-color: #2980b9;
     }
+
+    @media only screen and(min-width: 1400px) {
+        font-size: 1.1rem;
+    }
 }
 
 //Results
 
 .results {
-    margin-top: 40px;
-}
-.player-win {
-    color: green;
-    font-weight: bolder;
-}
+    @media only screen and(min-width: 1400px) {
+        margin-top: 10px;
+        margin-bottom: 56px;
+        font-size: 1.2rem;
+    }
 
-#result-btn {
-    width: 30vw;
-    margin-top: 10px;
-}
+    &-player-win {
+        color: green;
+        font-weight: bolder;
+        padding: 10px;
+    }
 
-.result-span {
-    margin-top: 40px;
-}
-
-.error-span {
-    color: red;
+    &-span {
+        margin-top: 20px;
+    }
 }
