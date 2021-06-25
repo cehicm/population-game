@@ -38,9 +38,7 @@ let apiResponse = fetch(api_url)
       if (player1 === "" || player2 === "") {
         resultSpan.innerHTML = "One or two empty values";
       } else {
-        document.querySelector(
-          ".results-span"
-        ).innerHTML = `The correct number is ${population.toLocaleString()}`;
+        resultSpan.innerHTML = `The correct number is ${population.toLocaleString()}`;
 
         const playerWin = document.querySelector(".player-win");
 
