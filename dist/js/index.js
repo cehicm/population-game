@@ -1,1 +1,1 @@
-"use strict";
+"use strict";var api_url="https://restcountries.eu/rest/v2/";fetch("https://restcountries.eu/rest/v2/").then((function(e){return e.json()})).then((function(e){console.log(e[0].flag);var t=e[0].name;document.querySelector(".country-name").innerHTML=t;var n=e[0].nativeName;document.querySelector(".country-native-name").innerHTML=n,document.querySelector(".country-pic").src=e[0].flag}));
