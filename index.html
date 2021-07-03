@@ -28,7 +28,8 @@
         <div class="player-one">
           <input type="number" class="player-input" id="player-one-input" />
           <select name="unit-value" id="player-one-unit-value">
-            <option value="1000"> Thousant </option>
+            <option value="100"> Hundred </option>
+            <option value="1000"> Thousand </option>
             <option value="1000000"> Million </option>
             <option value="1000000000"> Billion </option>
           </select>
@@ -37,7 +38,8 @@
         <div class="player-two">
           <input type="number" class="player-input" id="player-two-input" />
           <select name="unit-value" id="player-two-unit-value">
-            <option value="1000"> Thousant </option>
+            <option value="100"> Hundred </option>
+            <option value="1000"> Thousand </option>
             <option value="1000000"> Million </option>
             <option value="1000000000"> Billion </option>
           </select>
@@ -48,10 +50,10 @@
       <button id="result-btn" class="success-btn">Results</button>
 
       <div class="results">
-        <p class="results-player-win"></p>
+        <p class="results-player-win" id="results-player-win"></p>
         <p class="results-correct"></p>
         <p class="results-span"></p>
-        <p>
+        <p id="current-score">
           Current score is:
         </p>
       </div>

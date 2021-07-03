@@ -22,7 +22,7 @@ body {
   color: white;
   margin-top: 50px;
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 800px) {
   .container {
     margin-top: 10px;
   }
@@ -38,6 +38,11 @@ body {
 }
 .success-btn:hover, .success-btn:focus {
   background-color: #398a58;
+}
+@media only screen and (min-width: 800px) {
+  .success-btn:hover, .success-btn:focus {
+    background-color: red;
+  }
 }
 @media only screen and (min-width: 1400px) {
   .success-btn {
@@ -62,27 +67,38 @@ body {
 }
 
 .country {
-  height: 30vh;
   text-align: center;
   border: 1px solid whitesmoke;
   padding: 10px;
+  width: 96vw;
 }
 @media only screen and (min-width: 600px) {
   .country {
     height: 50vh;
   }
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 800px) {
   .country {
     margin-bottom: 50px;
   }
+}
+.country h1 {
+  font-size: 1.2rem;
 }
 .country-pic {
   width: 30vw;
   padding: 5px;
 }
+@media only screen and (min-width: 800px) {
+  .country-pic {
+    width: 20vw;
+  }
+}
 .country #skip-btn {
-  margin-top: 5px;
+  margin: 0 auto;
+  position: absolute;
+  top: 215px;
+  left: 100px;
 }
 
 .player {
@@ -139,4 +155,9 @@ select:hover, select:focus {
 }
 .results-span {
   margin-top: 20px;
+}
+@media only screen and (min-width: 800px) {
+  .results-span {
+    margin-top: 0;
+  }
 }

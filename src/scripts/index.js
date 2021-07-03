@@ -1,89 +1,80 @@
 const api_url = "https://restcountries.eu/rest/v2/";
-//for or forEach to handle all 250 countries
 
+// HANDLE IT WITH A PROMISE
 let apiResponse = fetch(api_url)
-  .then((response) => response.json())
-  .then(function (data) {
-    const name = data[0].name;
-    document.querySelector(".country-name").innerHTML = name;
+  .then((data) => data.json())
+  .then(function skipCountry(data) {
+    const skipBtn = document.getElementById("skip-btn");
+    skipBtn.addEventListener("click", skipCountry);
 
-    const nativeName = data[0].nativeName;
-    document.querySelector(".country-native-name").innerHTML = nativeName;
+    function skipCountry() {
+      // Math.random for item and then get then name
+      //use data.forEach to get individual item, then turn all of them into an array and do math.Random on them
 
-    const img = document.querySelector(".country-pic");
-    img.src = data[0].flag;
+      let random = data[Math.floor(Math.random() * data.length)];
+      console.log(random);
+      console.log(random.name);
 
-    const population = data[0].population;
-    document.querySelector(
-      ".country-population"
-    ).innerHTML = population.toLocaleString();
+      const countryName = document.querySelector(".country-name");
+      countryName.innerHTML = random.name;
 
-    //Get Player Results
-    const getShowResults = () => {
-      const resultSpan = document.querySelector(".results-correct");
-      //Player number input
-      let player1 = document.getElementById("player-one-input").value;
-      let player2 = document.getElementById("player-two-input").value;
+      //   const nativeName = document.querySelector(".country-native-name");
+      //   nativeName.innerHTML = random.nativeName;
 
-      //Player chosen units
-      let playerOneUnitValue = document.getElementById("player-one-unit-value");
-      let playerTwoUnitValue = document.getElementById("player-two-unit-value");
+      const countryFlag = document.querySelector(".country-pic");
+      countryFlag.src = random.flag;
 
-      const value1 = playerOneUnitValue.value;
-      const value2 = playerTwoUnitValue.value;
+      const countryPopulation = document.querySelector(".country-population");
 
-      const playerOneTotal = player1 * value1;
-      const playerTwoTotal = player2 * value2;
+      const population = random.population.toLocaleString();
+      countryPopulation.innerHTML = population;
 
-      if (player1 === "" || player2 === "") {
-        resultSpan.innerHTML = "One or two empty values";
-      } else {
-        resultSpan.innerHTML = `The correct number is ${population.toLocaleString()}`;
+      //Get Player Results
+      const getShowResults = () => {
+        const resultSpan = document.querySelector(".results-correct");
+        //Player number input
+        let player1 = document.getElementById("player-one-input").value;
+        let player2 = document.getElementById("player-two-input").value;
 
-        const playerWin = document.querySelector(".results-player-win");
+        //Player chosen units
+        let playerOneUnitValue = document.getElementById(
+          "player-one-unit-value"
+        );
+        let playerTwoUnitValue = document.getElementById(
+          "player-two-unit-value"
+        );
 
-        if (
-          Math.abs(population - playerOneTotal) <
-          Math.abs(population - playerTwoTotal)
-        ) {
-          playerWin.innerText = "Player 1 wins!";
+        const value1 = playerOneUnitValue.value;
+        const value2 = playerTwoUnitValue.value;
+
+        const playerOneTotal = player1 * value1;
+        const playerTwoTotal = player2 * value2;
+
+        if (player1 === "" || player2 === "") {
+          resultSpan.innerHTML = "One or two empty values";
+        } else {
+          resultSpan.innerHTML = `The correct number is ${population}`;
+          let playerWin = document.querySelector(".results-player-win");
+
+          if (
+            Math.abs(parseInt(population) - playerOneTotal) <
+            Math.abs(parseInt(population) - playerTwoTotal)
+          ) {
+            playerWin.innerText = "Player 1 wins!";
+            console.log("1");
+          }
+
+          if (
+            Math.abs(parseInt(population) - playerOneTotal) >
+            Math.abs(parseInt(population) - playerTwoTotal)
+          ) {
+            playerWin.innerText = "Player 2 wins!";
+            console.log("2");
+          }
         }
+      };
 
-        if (
-          Math.abs(population - playerOneTotal) >
-          Math.abs(population - playerTwoTotal)
-        ) {
-          playerWin.innerText = "Player 2 wins!";
-        }
-      }
-    };
-
-    const resultBtn = document.getElementById("result-btn");
-    resultBtn.addEventListener("click", getShowResults);
+      const resultBtn = document.getElementById("result-btn");
+      resultBtn.addEventListener("click", getShowResults);
+    }
   });
-
-//get the inputs and compare them to the population number
-
-//calculate total population - player input, which one is closer to 0 is the winner
-
-// async function getCountry() {
-//   const response = await fetch(api_url);
-//   const data = await response.json();
-
-//   const name = data[0].name;
-//   document.querySelector(".country-name").innerHTML = name;
-
-//   const nativeName = data[0].nativeName;
-//   document.querySelector(".country-native-name").innerHTML = nativeName;
-
-//   const countryPic = data[0].flag;
-
-//   document.querySelector(".country-pic").innerHTML = countryPic;
-
-//   console.log(data);
-//   console.log(data[0].name);
-//   console.log(data[0].nativeName);
-//   console.log(data[0].flag);
-// }
-
-// getCountry();
