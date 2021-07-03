@@ -26,8 +26,8 @@ let apiResponse = fetch(api_url)
 
       const countryPopulation = document.querySelector(".country-population");
 
-      const population = random.population.toLocaleString();
-      countryPopulation.innerHTML = population;
+      const population = random.population;
+      countryPopulation.innerHTML = population.toLocaleString();
 
       //Get Player Results
       const getShowResults = () => {
@@ -53,7 +53,7 @@ let apiResponse = fetch(api_url)
         if (player1 === "" || player2 === "") {
           resultSpan.innerHTML = "One or two empty values";
         } else {
-          resultSpan.innerHTML = `The correct number is ${population}`;
+          resultSpan.innerHTML = `The correct number is ${population.toLocaleString()}`;
           let playerWin = document.querySelector(".results-player-win");
 
           if (
@@ -61,7 +61,6 @@ let apiResponse = fetch(api_url)
             Math.abs(parseInt(population) - playerTwoTotal)
           ) {
             playerWin.innerText = "Player 1 wins!";
-            console.log("1");
           }
 
           if (
@@ -69,7 +68,6 @@ let apiResponse = fetch(api_url)
             Math.abs(parseInt(population) - playerTwoTotal)
           ) {
             playerWin.innerText = "Player 2 wins!";
-            console.log("2");
           }
         }
       };
