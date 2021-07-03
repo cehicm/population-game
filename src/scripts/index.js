@@ -1,6 +1,17 @@
 const api_url = "https://restcountries.eu/rest/v2/";
 
+//TO DO:
 // HANDLE IT WITH A PROMISE
+// Reconfigure code to have all funcs separately; so the btn doesn't get deleted with this.clear() -- how can all of them use the same main data?
+//Get score tracking to work correctly
+//clear input field on focus
+// First screen with open btn, opaque bg
+//Clear up and reconfigure code
+//Update CSS for new layout
+
+let playerOneScore = 0;
+let playerTwoScore = 0;
+
 let apiResponse = fetch(api_url)
   .then((data) => data.json())
   .then(function skipCountry(data) {
@@ -8,9 +19,6 @@ let apiResponse = fetch(api_url)
     skipBtn.addEventListener("click", skipCountry);
 
     function skipCountry() {
-      // Math.random for item and then get then name
-      //use data.forEach to get individual item, then turn all of them into an array and do math.Random on them
-
       let random = data[Math.floor(Math.random() * data.length)];
       console.log(random);
       console.log(random.name);
@@ -61,6 +69,8 @@ let apiResponse = fetch(api_url)
             Math.abs(parseInt(population) - playerTwoTotal)
           ) {
             playerWin.innerText = "Player 1 wins!";
+            // this.remove();
+            playerOneScore++;
           }
 
           if (
@@ -68,7 +78,14 @@ let apiResponse = fetch(api_url)
             Math.abs(parseInt(population) - playerTwoTotal)
           ) {
             playerWin.innerText = "Player 2 wins!";
+            // this.remove();
+
+            playerTwoScore++;
           }
+
+          document.getElementById(
+            "current-score"
+          ).innerHTML = `P1: ${playerOneScore} --- P2: ${playerTwoScore}`;
         }
       };
 
