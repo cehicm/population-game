@@ -38,10 +38,13 @@ body {
     &:hover,
     &:focus {
         background-color: #398a58;
-        @media only screen and(min-width: 800px) {
-            background-color: red;
-        }
+      
     }
+  @media only screen and(min-width: 800px) {
+  padding: 15px;
+    font-size: 1.1rem;        }
+  
+
     @media only screen and(min-width: 1400px) {
         padding: 13px;
         font-size: 1.2rem;
@@ -79,7 +82,10 @@ body {
     }
 
     &-pic {
+//has to have a set width and hight, and cover
+//test
         width: 30vw;
+        height: 20vh;
         padding: 5px;
 
         @media only screen and(min-width: 800px) {
@@ -88,10 +94,12 @@ body {
     }
 
     #skip-btn {
-        margin: 0 auto;
-        position: absolute;
-        top: 215px;
-        left: 100px;
+       margin-top: 20px;
+
+ @media only screen and(min-width: 600px) {
+        margin-top: 40px;
+    }
+     
     }
 }
 

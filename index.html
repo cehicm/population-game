@@ -26,7 +26,12 @@
 
       <div class="player">
         <div class="player-one">
-          <input type="number" class="player-input" id="player-one-input" />
+          <input
+            type="number"
+            class="player-input"
+            id="player-one-input"
+            onfocus="this.value=''"
+          />
           <select name="unit-value" id="player-one-unit-value">
             <option value="100"> Hundred </option>
             <option value="1000"> Thousand </option>
@@ -36,7 +41,12 @@
         </div>
 
         <div class="player-two">
-          <input type="number" class="player-input" id="player-two-input" />
+          <input
+            type="number"
+            class="player-input"
+            id="player-two-input"
+            onfocus="this.value=''"
+          />
           <select name="unit-value" id="player-two-unit-value">
             <option value="100"> Hundred </option>
             <option value="1000"> Thousand </option>
