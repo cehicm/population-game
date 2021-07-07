@@ -1,18 +1,24 @@
 const api_url = "https://restcountries.eu/rest/v2/";
 
 //TO DO:
-//Clear up and reconfigure code
-// ADD CAtch
-
 //In the future:
 // to be able to add more players
 
-function getData() {
-  fetch(api_url)
+async function getData() {
+  await fetch(api_url)
     .then((data) => {
       return data.json();
     })
-    .then(skipCountry);
+    .then(skipCountry)
+    .catch((err) => {
+      if (err.response) {
+        console.error("Failed with response", err.response.data);
+      } else if (err.request) {
+        console.error("Failed request", err);
+      } else {
+        console.error("Failed in general", err);
+      }
+    });
 }
 
 playerOneScore = 0;
