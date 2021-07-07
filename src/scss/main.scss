@@ -38,12 +38,11 @@ body {
     &:hover,
     &:focus {
         background-color: #398a58;
-      
     }
-  @media only screen and(min-width: 800px) {
-  padding: 15px;
-    font-size: 1.1rem;        }
-  
+    @media only screen and(min-width: 800px) {
+        padding: 15px;
+        font-size: 1.1rem;
+    }
 
     @media only screen and(min-width: 1400px) {
         padding: 13px;
@@ -82,8 +81,6 @@ body {
     }
 
     &-pic {
-//has to have a set width and hight, and cover
-//test
         width: 30vw;
         height: 20vh;
         padding: 5px;
@@ -94,22 +91,22 @@ body {
     }
 
     #skip-btn {
-       margin-top: 20px;
+        margin-top: 20px;
+        padding: 8px 16px;
 
- @media only screen and(min-width: 600px) {
-        margin-top: 40px;
-    }
-     
+        @media only screen and(min-width: 600px) {
+            margin-top: 40px;
+        }
     }
 }
 
 //Players
 
 .player {
-    margin-top: 90px;
+    margin-top: 40px;
 
-    @media only screen and(min-width: 600px) {
-        margin-top: 40px;
+    @media only screen and(min-width: 800px) {
+        margin-top: 0px;
     }
 
     @media only screen and(min-width: 1400px) {

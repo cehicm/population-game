@@ -98,6 +98,7 @@ body {
 }
 .country #skip-btn {
   margin-top: 20px;
+  padding: 8px 16px;
 }
 @media only screen and (min-width: 600px) {
   .country #skip-btn {
@@ -106,11 +107,11 @@ body {
 }
 
 .player {
-  margin-top: 90px;
+  margin-top: 40px;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
   .player {
-    margin-top: 40px;
+    margin-top: 0px;
   }
 }
 @media only screen and (min-width: 1400px) {
