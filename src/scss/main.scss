@@ -6,7 +6,8 @@ $black: #333333;
 //Main styles
 body {
     margin: 0 auto;
-    background-image: url("/src/images/world-140304.jpg");
+    background-image: url("/src/images/world-opacity.png");
+    background-position: right;
 }
 
 .container,
@@ -19,10 +20,7 @@ body {
 .container {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
-    margin-top: 50px;
-    @media only screen and(min-width: 800px) {
-        margin-top: 10px;
-    }
+    margin-top: 10px;
 }
 
 //Buttons
@@ -40,8 +38,8 @@ body {
         background-color: #398a58;
     }
     @media only screen and(min-width: 800px) {
-        padding: 15px;
-        font-size: 1.1rem;
+        padding: 11px 10px;
+        font-size: 1rem;
     }
 
     @media only screen and(min-width: 1400px) {
@@ -75,27 +73,49 @@ body {
     @media only screen and(min-width: 800px) {
         margin-bottom: 50px;
     }
+    @media only screen and(min-width: 1000px) {
+        margin-bottom: 20px;
+    }
 
-    h1 {
+    &-name {
         font-size: 1.2rem;
+
+        @media only screen and(min-width: 800px) {
+            font-size: 2rem;
+        }
+
+        &-native {
+            font-size: 1rem;
+
+            @media only screen and(min-width: 800px) {
+                font-size: 1.5rem;
+            }
+        }
     }
 
     &-pic {
-        width: 30vw;
-        height: 20vh;
+        height: 11vh;
         padding: 5px;
+        width: 40vw;
+        object-fit: contain;
+
+        @media only screen and(min-width: 600px) {
+            height: 16vh;
+        }
 
         @media only screen and(min-width: 800px) {
-            width: 20vw;
+            width: 23vw;
         }
     }
 
     #skip-btn {
         margin-top: 20px;
-        padding: 8px 16px;
 
         @media only screen and(min-width: 600px) {
             margin-top: 40px;
+        }
+        @media only screen and(min-width: 1000px) {
+            width: 15vw;
         }
     }
 }
@@ -118,8 +138,9 @@ body {
         width: 20vw;
         margin-bottom: 10px;
 
-        @media only screen and(min-width: 1400px) {
-            padding: 7px;
+        @media only screen and(min-width: 800px) {
+            padding: 9px;
+            width: 24vw;
         }
     }
 }
@@ -136,6 +157,11 @@ select {
         background-color: #2980b9;
     }
 
+    @media only screen and(min-width: 800px) {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
     @media only screen and(min-width: 1400px) {
         font-size: 1.1rem;
     }
@@ -144,6 +170,9 @@ select {
 //Results
 
 .results {
+    @media only screen and(min-width: 1000px) {
+        font-weight: 700;
+    }
     @media only screen and(min-width: 1400px) {
         margin-top: 10px;
         margin-bottom: 56px;
@@ -151,9 +180,15 @@ select {
     }
 
     &-player-win {
-        color: green;
+        margin-top: 10px;
+        color: #fae102;
         font-weight: bolder;
         padding: 10px;
+        font-style: oblique;
+        @media only screen and(min-width: 1000px) {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
     }
 
     &-span {
@@ -161,5 +196,9 @@ select {
         @media only screen and(min-width: 800px) {
             margin-top: 0;
         }
+    }
+
+    #current-score {
+        text-align: center;
     }
 }

@@ -1,17 +1,11 @@
 const api_url = "https://restcountries.eu/rest/v2/";
 
 //TO DO:
-// MAKE A START SCREEN:
-//First screen with open btn, opaque bg
 //Clear up and reconfigure code
-//Update CSS for new layout
-//block second click for results
-//What happens when there's a tie
+// ADD CAtch
 
-//Functionality:
+//In the future:
 // to be able to add more players
-
-//Shorten the code for getting player results
 
 function getData() {
   fetch(api_url)
@@ -27,22 +21,19 @@ playerTwoScore = 0;
 function skipCountry(data) {
   let random = data[Math.floor(Math.random() * data.length)];
 
-  const population = random.population;
+  document.querySelector(".country-pic").src = random.flag;
 
-  document.querySelector(
-    ".country-population"
-  ).innerHTML = population.toLocaleString();
+  const population = random.population;
 
   document.querySelector(".country-name").innerHTML = random.name;
 
-  //   const nativeName = document.querySelector(".country-native-name");
-  //   nativeName.innerHTML = random.nativeName;
-
-  document.querySelector(".country-pic").src = random.flag;
+  const nativeName = document.querySelector(".country-name-native");
+  nativeName.innerHTML = random.nativeName;
 
   function getShowResults(data) {
     let player1 = document.getElementById("player-one-input").value;
     let player2 = document.getElementById("player-two-input").value;
+
     const resultSpan = document.querySelector(".results-correct");
 
     //Player chosen units
@@ -79,28 +70,15 @@ function skipCountry(data) {
         playerTwoScore++;
       }
 
-      document.getElementById(
-        "current-score"
-      ).innerHTML = `P1: ${playerOneScore} <br> P2: ${playerTwoScore}`;
+      document.getElementById("current-score").innerHTML = `Current score:
+      <p> P1: ${playerOneScore} </p> <p> P2: ${playerTwoScore} </p>`;
     }
   }
   const resultBtn = document.getElementById("result-btn");
   resultBtn.addEventListener("click", getShowResults, { once: true });
 }
 
-//Event listeners
-
 const skipBtn = document.getElementById("skip-btn");
 skipBtn.addEventListener("click", getData, true);
 
 getData();
-
-// skipBtn.removeEventListener("click", getData, true);
-
-// e.stopImmediatePropagation();
-
-// // isFirst = true;
-// if (isFirst) {
-//   isFirst = false;
-//   return;
-// }

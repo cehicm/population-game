@@ -7,7 +7,8 @@
 
 body {
   margin: 0 auto;
-  background-image: url("/src/images/world-140304.jpg");
+  background-image: url("/src/images/world-opacity.png");
+  background-position: right;
 }
 
 .container,
@@ -20,12 +21,7 @@ body {
 .container {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: white;
-  margin-top: 50px;
-}
-@media only screen and (min-width: 800px) {
-  .container {
-    margin-top: 10px;
-  }
+  margin-top: 10px;
 }
 
 .success-btn {
@@ -41,8 +37,8 @@ body {
 }
 @media only screen and (min-width: 800px) {
   .success-btn {
-    padding: 15px;
-    font-size: 1.1rem;
+    padding: 11px 10px;
+    font-size: 1rem;
   }
 }
 @media only screen and (min-width: 1400px) {
@@ -83,26 +79,54 @@ body {
     margin-bottom: 50px;
   }
 }
-.country h1 {
+@media only screen and (min-width: 1000px) {
+  .country {
+    margin-bottom: 20px;
+  }
+}
+.country-name {
   font-size: 1.2rem;
 }
+@media only screen and (min-width: 800px) {
+  .country-name {
+    font-size: 2rem;
+  }
+}
+.country-name-native {
+  font-size: 1rem;
+}
+@media only screen and (min-width: 800px) {
+  .country-name-native {
+    font-size: 1.5rem;
+  }
+}
 .country-pic {
-  width: 30vw;
-  height: 20vh;
+  height: 11vh;
   padding: 5px;
+  width: 40vw;
+  object-fit: contain;
+}
+@media only screen and (min-width: 600px) {
+  .country-pic {
+    height: 16vh;
+  }
 }
 @media only screen and (min-width: 800px) {
   .country-pic {
-    width: 20vw;
+    width: 23vw;
   }
 }
 .country #skip-btn {
   margin-top: 20px;
-  padding: 8px 16px;
 }
 @media only screen and (min-width: 600px) {
   .country #skip-btn {
     margin-top: 40px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .country #skip-btn {
+    width: 15vw;
   }
 }
 
@@ -124,9 +148,10 @@ body {
   width: 20vw;
   margin-bottom: 10px;
 }
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 800px) {
   .player input {
-    padding: 7px;
+    padding: 9px;
+    width: 24vw;
   }
 }
 
@@ -140,12 +165,23 @@ select {
 select:hover, select:focus {
   background-color: #2980b9;
 }
+@media only screen and (min-width: 800px) {
+  select {
+    font-size: 1rem;
+    padding: 8px;
+  }
+}
 @media only screen and (min-width: 1400px) {
   select {
     font-size: 1.1rem;
   }
 }
 
+@media only screen and (min-width: 1000px) {
+  .results {
+    font-weight: 700;
+  }
+}
 @media only screen and (min-width: 1400px) {
   .results {
     margin-top: 10px;
@@ -154,9 +190,17 @@ select:hover, select:focus {
   }
 }
 .results-player-win {
-  color: green;
+  margin-top: 10px;
+  color: #fae102;
   font-weight: bolder;
   padding: 10px;
+  font-style: oblique;
+}
+@media only screen and (min-width: 1000px) {
+  .results-player-win {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
 }
 .results-span {
   margin-top: 20px;
@@ -165,4 +209,7 @@ select:hover, select:focus {
   .results-span {
     margin-top: 0;
   }
+}
+.results #current-score {
+  text-align: center;
 }
