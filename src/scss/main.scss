@@ -64,14 +64,13 @@ body {
     text-align: center;
     border: 1px solid whitesmoke;
     padding: 10px;
-    width: 96vw;
 
-    @media only screen and(min-width: 600px) {
-        height: 50vh;
-    }
+    width: 96vw;
+    overflow: overlay;
 
     @media only screen and(min-width: 800px) {
         margin-bottom: 50px;
+        width: 40vw;
     }
     @media only screen and(min-width: 1000px) {
         margin-bottom: 20px;
@@ -130,7 +129,7 @@ body {
     }
 
     @media only screen and(min-width: 1400px) {
-        margin-top: 90px;
+        margin-top: 40px;
     }
 
     input {
@@ -141,6 +140,7 @@ body {
         @media only screen and(min-width: 800px) {
             padding: 9px;
             width: 24vw;
+            font-size: 1.1rem;
         }
     }
 }
@@ -170,13 +170,15 @@ select {
 //Results
 
 .results {
+    @media only screen and(min-width: 800px) {
+        font-size: 1.2rem;
+    }
     @media only screen and(min-width: 1000px) {
         font-weight: 700;
     }
     @media only screen and(min-width: 1400px) {
         margin-top: 10px;
         margin-bottom: 56px;
-        font-size: 1.2rem;
     }
 
     &-player-win {
@@ -187,7 +189,6 @@ select {
         font-style: oblique;
         @media only screen and(min-width: 1000px) {
             font-weight: 700;
-            font-size: 1.2rem;
         }
     }
 
@@ -208,6 +209,11 @@ select {
     font-weight: bolder;
     padding: 2px;
     font-size: 1.2rem;
+
+    @media only screen and(min-width: 800px) {
+        font-size: 1.4rem;
+        margin-top: 8px;
+    }
 }
 
 //Transitions

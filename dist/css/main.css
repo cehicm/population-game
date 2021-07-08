@@ -68,15 +68,12 @@ body {
   border: 1px solid whitesmoke;
   padding: 10px;
   width: 96vw;
-}
-@media only screen and (min-width: 600px) {
-  .country {
-    height: 50vh;
-  }
+  overflow: overlay;
 }
 @media only screen and (min-width: 800px) {
   .country {
     margin-bottom: 50px;
+    width: 40vw;
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -140,7 +137,7 @@ body {
 }
 @media only screen and (min-width: 1400px) {
   .player {
-    margin-top: 90px;
+    margin-top: 40px;
   }
 }
 .player input {
@@ -152,6 +149,7 @@ body {
   .player input {
     padding: 9px;
     width: 24vw;
+    font-size: 1.1rem;
   }
 }
 
@@ -177,6 +175,11 @@ select:hover, select:focus {
   }
 }
 
+@media only screen and (min-width: 800px) {
+  .results {
+    font-size: 1.2rem;
+  }
+}
 @media only screen and (min-width: 1000px) {
   .results {
     font-weight: 700;
@@ -186,7 +189,6 @@ select:hover, select:focus {
   .results {
     margin-top: 10px;
     margin-bottom: 56px;
-    font-size: 1.2rem;
   }
 }
 .results-player-win {
@@ -199,7 +201,6 @@ select:hover, select:focus {
 @media only screen and (min-width: 1000px) {
   .results-player-win {
     font-weight: 700;
-    font-size: 1.2rem;
   }
 }
 .results-span {
@@ -219,6 +220,12 @@ select:hover, select:focus {
   font-weight: bolder;
   padding: 2px;
   font-size: 1.2rem;
+}
+@media only screen and (min-width: 800px) {
+  #counter {
+    font-size: 1.4rem;
+    margin-top: 8px;
+  }
 }
 
 .hide-me {
