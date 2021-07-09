@@ -1,5 +1,3 @@
-const api_url = "https://restcountries.eu/rest/v2/";
-
 //TO DO:
 //In the future:
 // to be able to add more players
@@ -13,7 +11,7 @@ playerOneScore = 0;
 playerTwoScore = 0;
 
 async function getData() {
-  await fetch(api_url)
+  await fetch("https://restcountries.eu/rest/v2/")
     .then((data) => data.json())
     .then(skipCountry)
     .catch((err) => {
