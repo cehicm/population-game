@@ -5,7 +5,7 @@ const api_url = "https://restcountries.eu/rest/v2/";
 // to be able to add more players
 
 //Globs
-let playerForm = document.getElementById("player-form");
+const playerForm = document.getElementById("player-form");
 const resultBtn = document.getElementById("result-btn");
 const counterShow = document.getElementById("counter");
 
@@ -14,9 +14,7 @@ playerTwoScore = 0;
 
 async function getData() {
   await fetch(api_url)
-    .then((data) => {
-      return data.json();
-    })
+    .then((data) => data.json())
     .then(skipCountry)
     .catch((err) => {
       if (err.response) {
@@ -30,7 +28,7 @@ async function getData() {
 }
 
 skipCountry = (data) => {
-  let random = data[Math.floor(Math.random() * data.length)];
+  const random = data[Math.floor(Math.random() * data.length)];
   const population = random.population;
 
   document.querySelector(".country-pic").src = random.flag;
@@ -41,19 +39,18 @@ skipCountry = (data) => {
   nativeName.innerHTML = random.nativeName;
 
   function getShowResults() {
-    let player1 = document.getElementById("player-one-input").value;
-    let player2 = document.getElementById("player-two-input").value;
+    const player1 = document.getElementById("player-one-input").value;
+    const player2 = document.getElementById("player-two-input").value;
     const resultSpan = document.querySelector(".results-correct");
 
     //Player chosen units & Total
-    let playerOneUnitValue = document.getElementById("player-one-unit-value");
-    let playerTwoUnitValue = document.getElementById("player-two-unit-value");
+    const playerOneUnitValue = document.getElementById("player-one-unit-value")
+      .value;
+    const playerTwoUnitValue = document.getElementById("player-two-unit-value")
+      .value;
 
-    const value1 = playerOneUnitValue.value;
-    const value2 = playerTwoUnitValue.value;
-
-    let playerOneTotal = player1 * value1;
-    let playerTwoTotal = player2 * value2;
+    const playerOneTotal = player1 * playerOneUnitValue;
+    const playerTwoTotal = player2 * playerTwoUnitValue;
 
     if (player1.trim() === "" || player2.trim() === "") {
       resultSpan.innerHTML = "One or two empty values";
@@ -61,7 +58,7 @@ skipCountry = (data) => {
       resultSpan.innerHTML = "It's a tie!";
     } else {
       resultSpan.innerHTML = `The correct number is ${population.toLocaleString()}`;
-      let playerWin = document.querySelector(".results-player-win");
+      const playerWin = document.querySelector(".results-player-win");
 
       if (
         Math.abs(parseInt(population) - playerOneTotal) <
@@ -83,7 +80,7 @@ skipCountry = (data) => {
       <p> P1: ${playerOneScore} </p> <p> P2: ${playerTwoScore} </p>`;
 
       //counter function
-      let counter = 4;
+      const counter = 4;
       function countdown(counter) {
         if (counter > 0) {
           counter--;
