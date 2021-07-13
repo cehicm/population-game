@@ -3,3 +3,6 @@ Using vanilla Javascript to create a game where two players can guess the popula
 
 ## Techtack
 SASS, JavaSript, GULP, 
+
+### See live:
+https://population-game-li62h9xwy-cehicm.vercel.app/
