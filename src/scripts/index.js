@@ -11,7 +11,7 @@ playerOneScore = 0;
 playerTwoScore = 0;
 
 async function getData() {
-  await fetch("https://restcountries.eu/rest/v2/")
+  await fetch("https://restcountries.com/v2/all")
     .then((data) => data.json())
     .then(skipCountry)
     .catch((err) => {
