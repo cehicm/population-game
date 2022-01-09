@@ -13,7 +13,7 @@ playerTwoScore = 0;
 async function getData() {
   await fetch("https://restcountries.com/v2/all")
     .then((data) => data.json())
-    .then(skipCountry)
+    .then(getNextCountry)
     .catch((err) => {
       if (err.response) {
         console.error("Failed with response", err.response.data);
@@ -25,7 +25,7 @@ async function getData() {
     });
 }
 
-skipCountry = (data) => {
+getNextCountry = (data) => {
   const random = data[Math.floor(Math.random() * data.length)];
   const population = random.population;
 
@@ -97,14 +97,14 @@ skipCountry = (data) => {
       //Reset form
       setTimeout(() => {
         playerForm.reset();
-        skipCountry(data);
+        getNextCountry(data);
         playerWin.innerText = "";
         resultSpan.innerText = "";
         document.querySelector(".container").classList.add("hide-me");
       }, 3000);
     }
   }
-
+    
   resultBtn.addEventListener("click", getShowResults, { once: true });
 };
 
