@@ -35,7 +35,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
   background-color: #0ace55;
-  color: whitesmoke;
+  color: #f5f5f5;
 }
 .success-btn:hover, .success-btn:focus {
   background-color: #398a58;
@@ -73,11 +73,10 @@ body {
   border: 1px solid whitesmoke;
   padding: 10px;
   width: 96vw;
-  margin-bottom: 40px;
 }
 @media only screen and (min-width: 800px) {
   .country {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     width: 40vw;
   }
 }
@@ -155,7 +154,7 @@ body {
 
 select {
   background-color: #3498db;
-  color: white;
+  color: #ffffff;
   padding: 5px;
   border: none;
   cursor: pointer;
